@@ -33,8 +33,6 @@ public class Pickup : MonoBehaviourPun
             // destroy the object
             // PhotonNetwork.Destroy(gameObject);
             // BUG: pickups don't get removed from game and throw error:
-            // "Failed to 'network-remove' GameObject because it is missing a valid InstantiationId on view"
-            // https://forum.photonengine.com/discussion/15373/failed-to-network-remove-gameobject-because-it-is-missing-a-valid-instantiationid-on-view
             photonView.RPC("DestroyPickup", RpcTarget.AllBuffered);
         }
     }
